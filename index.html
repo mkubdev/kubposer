@@ -28,91 +28,277 @@
     
     <script src="/script.js" defer></script>
   </head>
-  <body>
-    <!-- Input form -->
-    <form id="input-form">
-      
-      <!-- Duration -->
-      <label for="duration">Duration</label>
-      <select id="duration" required>
-        <option value="" selected disabled>...</option>
-        <option value="1">&#119133;</option>
-        <option value="2">&#119134;</option>
-        <option value="4">&#119135;</option>
-        <option value="8">&#119136;</option>
-        <option value="16">&#119137;</option>
-        <option value="r1">&#119099;</option>
-        <option value="r2">&#119100;</option>
-        <option value="r4">&#119101;</option>
-        <option value="r8">&#119102;</option>
-        <option value="r16">&#119103;</option>
-      </select>
-      
-      <!-- Pith -->
-      <label for="pitch">Pitch</label>
-      <select id="pitch" required>
-        <option value="" selected disabled>...</option>
-        <option value="C">C</option>
-        <option value="D">D</option>
-        <option value="E">E</option>
-        <option value="F">F</option>
-        <option value="G">G</option>
-        <option value="A">A</option>
-        <option value="B">B</option>
-      </select>
-
-      <!-- Accidental -->
-      <label for="accidental">Accidental</label>
-      <select id="accidental" required>
-        <option value="" selected disabled>...</option>
-        <option value="b">&#9837;</option>
-        <option value="">&#9838;</option>
-        <option value="#">&#9839;</option>
-      </select>
-
-      <!-- Octave -->
-      <label for="octave">Octave</label>
-      <select id="octave" required>
-        <option value="" selected disabled>...</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-
-      <!-- Dot -->
-      <input id="dotted" type="checkbox" />
-
-      <!-- Button -->
-      <button id="input">
-        Add
-      </button>
-    </form>
-    
-    <!-- Staff -->
-    <div id="staff">
-      
+  
+  <!--[if IE]><div class="ie-browser"><![endif]-->
+  <!--[if mso]><div class="mso-container"><![endif]-->
+  <body style="font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; line-height: inherit; margin: 0; padding: 0;"><style type="text/css">
+  @media screen {
+    @font-face {
+      font-family: 'Lato'; font-style: normal; font-weight: 400; src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v11/qIIYRU-oROkIk8vfvxw6QvesZW2xOQ-xsNqO47m55DA.woff) format('woff');
+    }
+    @font-face {
+      font-family: 'Lato'; font-style: normal; font-weight: 700; src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v11/qdgUG4U09HnJwhYI-uK18wLUuEpTyoUstqEm5AMlJo4.woff) format('woff');
+    }
+    @font-face {
+      font-family: 'Lato'; font-style: italic; font-weight: 400; src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v11/RYyZNoeFgb0l7W3Vu1aSWOvvDin1pK8aKteLpeZ5c0A.woff) format('woff');
+    }
+    @font-face {
+      font-family: 'Lato'; font-style: italic; font-weight: 700; src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v11/HkF_qI1x_noxlxhrhMQYELO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+    }
+  }
+  body {
+  margin: 0; padding: 0;
+  }
+  body {
+  font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif;
+  }
+  .ExternalClass {
+  line-height: 100%;
+  }
+  @media only screen and (min-width: 520px) {
+    .block-grid {
+      width: 500px !important;
+    }
+    .block-grid .col {
+      display: table-cell; float: none !important; vertical-align: top;
+    }
+    .block-grid .col.num12 {
+      width: 500px !important;
+    }
+    .block-grid.mixed-two-up .col.num4 {
+      width: 164px !important;
+    }
+    .block-grid.mixed-two-up .col.num8 {
+      width: 328px !important;
+    }
+    .block-grid.two-up .col {
+      width: 250px !important;
+    }
+    .block-grid.three-up .col {
+      width: 166px !important;
+    }
+    .block-grid.four-up .col {
+      width: 125px !important;
+    }
+    .block-grid.five-up .col {
+      width: 100px !important;
+    }
+    .block-grid.six-up .col {
+      width: 83px !important;
+    }
+    .block-grid.seven-up .col {
+      width: 71px !important;
+    }
+    .block-grid.eight-up .col {
+      width: 62px !important;
+    }
+    .block-grid.nine-up .col {
+      width: 55px !important;
+    }
+    .block-grid.ten-up .col {
+      width: 50px !important;
+    }
+    .block-grid.eleven-up .col {
+      width: 45px !important;
+    }
+    .block-grid.twelve-up .col {
+      width: 41px !important;
+    }
+  }
+  @media (max-width: 520px) {
+    .block-grid {
+      min-width: 320px !important; max-width: 100% !important;
+    }
+    .col {
+      min-width: 320px !important; max-width: 100% !important;
+    }
+    .block-grid {
+      width: calc(100% - 40px) !important;
+    }
+    .col {
+      width: 100% !important;
+    }
+    img.fullwidth {
+      max-width: 100% !important;
+    }
+  }
+  </style>
+  <div class="nl-container" style="background: #FFFFFF; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; line-height: inherit; margin: 0 auto; min-width: 320px;">
+    <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="background-color: #FFFFFF;"><![endif]-->
+         
+    <div style="background: #1E1E1E; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; line-height: inherit;">
+      <div style="background: transparent; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; line-height: inherit; margin: 0 auto; max-width: 500px; min-width: 320px; overflow-wrap: break-word; width: calc(19000% - 98300px); word-break: break-word; word-wrap: break-word;" class="block-grid ">
+        <div style="border-collapse: collapse; display: table; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; line-height: inherit; width: 100%;">
+          <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:#1E1E1E;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width: 500px;"><tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
+  
+          <!--[if (mso)|(IE)]><td align="center" width="500" style=" width:500px; padding-right: 0px; padding-left: 0px; padding-top:0px; padding-bottom:0px; border-top: 5px solid #9734FE; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+          <div class="col num12" style="background: transparent; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; line-height: inherit; max-width: 500px; min-width: 320px; width: calc(18000% - 89500px);">
+            <div style="background: transparent; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; line-height: inherit; width: 100% !important;">
+              <!--[if (!mso)&(!IE)]><!-->
+              <div style="border-color: #9734fe transparent transparent; border-style: solid; border-width: 5px 0px 0px; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; line-height: inherit; padding: 0px;">
+                <!--<![endif]-->
+  
+  
+                <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 15px; padding-left: 15px; padding-top: 15px; padding-bottom: 15px;"><![endif]-->
+                <div style="color: #555555; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; line-height: 120%; padding: 15px;">
+                  <div style="font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; line-height: inherit;">
+                    <p style="color: #878787; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; font-size: 12px; line-height: 14px; margin: 0;"><br data-mce-bogus="1" style="line-height: inherit;"></p>
+                  </div>
+                </div>
+                <!--[if mso]></td></tr></table><![endif]-->
+  
+  
+                <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 5px; padding-bottom: 0px;"><![endif]-->
+                <div style="color: #FFFFFF; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; line-height: 120%; padding: 5px 10px 0px;">
+                  <div style="font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; line-height: inherit;">
+                    <p style="color: #878787; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; font-size: 12px; line-height: 14px; margin: 0;" align="center"><span style="color: rgb(255, 255, 255); font-size: 12px; line-height: 14px;"><strong style="line-height: inherit;"><span style="font-size: 36px; line-height: 43px;">Kubposer </span></strong>
+                      </span>
+                    </p>
+                    
+                    <p style="color: #878787; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; font-size: 12px; line-height: 14px; margin: 0;">&nbsp;<br style="line-height: inherit;"></p>
+                    <p style="color: #878787; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; font-size: 12px; line-height: 14px; margin: 0;">&nbsp;<br style="line-height: inherit;"></p>
+                  </div>
+                </div>
+                <!--[if mso]></td></tr></table><![endif]-->
+  
+  
+                <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 20px; padding-left: 20px; padding-top: 5px; padding-bottom: 20px;"><![endif]-->
+                <div style="color: #9734FE; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; line-height: 150%; padding: 5px 20px 20px;">
+                  <div style="font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; line-height: inherit;">
+                    <p style="color: #878787; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; font-size: 12px; line-height: 18px; margin: 0;"><span style="color: rgb(255, 255, 255); font-size: 16px; line-height: 24px;">A little project to experiment Tensorflow.js, Magenta.js and Vox.js.&nbsp;</span></p>
+                    <p style="color: #878787; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; font-size: 12px; line-height: 18px; margin: 0;">&nbsp;<br style="line-height: inherit;"></p>
+                    <p style="color: #878787; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; font-size: 12px; line-height: 18px; margin: 0;" align="center"><span style="color: rgb(255, 255, 255); font-size: 20px; line-height: 30px;"><span style="color: rgb(188, 95, 245); font-size: 20px; line-height: 30px;"><strong style="line-height: inherit;">🎶 Generate music using AI /w Magenta and Tensorflow</strong></span>
+                    </span></p>
+                  </div>
+                </div>
+                <!--[if mso]></td></tr></table><![endif]-->
+  
+              </div>
+              <!--<![endif]-->
+            </div>
+          </div>
+          <!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
+        </div>
+      </div>
     </div>
-    
-    <!-- Player controlers -->
-    <button id="play">
-      Play
-    </button>
-    <button id="erase">
-      Erase
-    </button>
-    <button id="generate">
-      Generate
-    </button>
-    
-    <!-- Add bpm -->
-    <label for="bpm">bpm</label>
-    <input type="number" id="bpm" min="50" max="180" value="90">
-    <br>
-    <br>
-    <br>
+    <div style="background: transparent; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; line-height: inherit;">
+      <div style="background: transparent; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; line-height: inherit; margin: 0 auto; max-width: 500px; min-width: 320px; overflow-wrap: break-word; width: calc(19000% - 98300px); word-break: break-word; word-wrap: break-word;" class="block-grid ">
+        <div style="border-collapse: collapse; display: table; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; line-height: inherit; width: 100%;">
+          <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width: 500px;"><tr class="layout-full-width" style="background-color:transparent;"><![endif]-->
+  
+          <!--[if (mso)|(IE)]><td align="center" width="500" style=" width:500px; padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px; border-top: 0px solid transparent; border-left: 0px solid transparent; border-bottom: 0px solid transparent; border-right: 0px solid transparent;" valign="top"><![endif]-->
+          <div class="col num12" style="background: transparent; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; line-height: inherit; max-width: 500px; min-width: 320px; width: calc(18000% - 89500px);">
+            <div style="background: transparent; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; line-height: inherit; width: 100% !important;">
+              <!--[if (!mso)&(!IE)]><!-->
+              <div style="border: 0px solid transparent; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; line-height: inherit; padding: 5px 0px;">
+                <!--<![endif]-->
 
-    <!-- Add midi player -->
-    <midi-visualizer type="staff" id="myVisualizer"></midi-visualizer>
-    <midi-player sound-font="https://storage.googleapis.com/magentadata/js/soundfonts/salamander" visualizer="#myVisualizer" id="midiPlayer"></midi-player>
-    
+                
+  
+  
+                <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 30px; padding-bottom: 30px;"><![endif]-->
+                <div style="color: #555555; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; line-height: 120%; padding: 30px 10px;">
+                  <div style="font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; line-height: inherit;">
+
+                    <!-- Input form -->
+                    <form id="input-form">
+                      
+                      <!-- Duration -->
+                      <label for="duration">Duration</label>
+                      <select id="duration" required>
+                        <option value="" selected disabled>...</option>
+                        <option value="1">&#119133;</option>
+                        <option value="2">&#119134;</option>
+                        <option value="4">&#119135;</option>
+                        <option value="8">&#119136;</option>
+                        <option value="16">&#119137;</option>
+                        <option value="r1">&#119099;</option>
+                        <option value="r2">&#119100;</option>
+                        <option value="r4">&#119101;</option>
+                        <option value="r8">&#119102;</option>
+                        <option value="r16">&#119103;</option>
+                      </select>
+                      
+                      <!-- Pith -->
+                      <label for="pitch">Pitch</label>
+                      <select id="pitch" required>
+                        <option value="" selected disabled>...</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                        <option value="F">F</option>
+                        <option value="G">G</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                      </select>
+
+                      <!-- Accidental -->
+                      <label for="accidental">Accidental</label>
+                      <select id="accidental" required>
+                        <option value="" selected disabled>...</option>
+                        <option value="b">&#9837;</option>
+                        <option value="">&#9838;</option>
+                        <option value="#">&#9839;</option>
+                      </select>
+
+                      <!-- Octave -->
+                      <label for="octave">Octave</label>
+                      <select id="octave" required>
+                        <option value="" selected disabled>...</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+
+                      <!-- Dot -->
+                      <input id="dotted" type="checkbox" />
+
+                      <!-- Button -->
+                      <button id="input">
+                        Add
+                      </button>
+                    </form>
+                    
+                    <!-- Staff -->
+                    <div id="staff">
+                      
+                    </div>
+                    
+                    <!-- Player controlers -->
+                    <button id="play">
+                      Play
+                    </button>
+                    <button id="erase">
+                      Erase
+                    </button>
+                    <button id="generate">
+                      Generate
+                    </button>
+                    
+                    <!-- Add bpm -->
+                    <label for="bpm">bpm</label>
+                    <input type="number" id="bpm" min="50" max="180" value="90">
+                    <br>
+                    <br>
+                    <br>
+
+                    <!-- Add midi player -->
+                    <midi-visualizer type="staff" id="myVisualizer"></midi-visualizer>
+                    <midi-player sound-font="https://storage.googleapis.com/magentadata/js/soundfonts/salamander" visualizer="#myVisualizer" id="midiPlayer"></midi-player>
+                  </div>
+                </div>
+  
+              </div>
+              <!--<![endif]-->
+            </div>
+          </div>
+          <!--[if (mso)|(IE)]></td></tr></table></td></tr></table><![endif]-->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--[if (mso)|(IE)]></div><![endif]-->
+  
+  
+  
   </body>
 </html>
