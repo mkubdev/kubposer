@@ -3,7 +3,7 @@ Generate music using AI /w Magenta and Tensorflow
 
 Built with help from Coursera's course
 
-![kubposer.gif](https://media2.giphy.com/media/FuJDlWXChZ6HaIhDKZ/giphy.gif)
+![kubposer.gif](https://media2.giphy.com/media/DIQqzD2GhPBBjpoYTR/giphy.gif)
 
 See the **[DEMO](https://kubposer.netlify.app/)**
 
